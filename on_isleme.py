@@ -3,11 +3,9 @@ import re
 import string
 import nltk
 from nltk.tokenize import word_tokenize
-import jpype
-from jpype import JClass, getDefaultJVMPath, startJVM, JString
 import emoji
 
-file_path = "veriSeti.xlsx"   #veri setininin yolunu belirtme
+file_path = "veri.xlsx"   #veri setininin yolunu belirtme
 cleaned_csv_file_path = "temizlenmis.csv" #temizlenmiş veriyi kaydetmek için yolu belirtme
 stop_words = "stop_words.txt"
 filtered_csv_path = 'for_labelling_data.csv' # sadece text ve clear_text içeren yeni excel dosyasının yolu
@@ -25,8 +23,6 @@ removeRowMissingValue=True
 removeRepeated = True
 removeEmoji = True
 tokenization = True
-lemmatization = True
-pos_tagging_enabled =True
 removeStopWords = True
 
 
@@ -95,31 +91,6 @@ def clean_text(text, removeSpecialChars, removeLinks, removeHTML, removeHashtags
 # Tokenizasyon fonksiyonu 
 def tokenize_comment(text):
     return word_tokenize(text)
-
-# Zemberek'i başlatma ve morfolojik analizciyi oluşturma
-jpype.startJVM(classpath=['zemberek-full_old.jar'])
-TurkishMorphology = JClass('zemberek.morphology.TurkishMorphology')
-morphology = TurkishMorphology.createWithDefaults()
-
-# Kök bulma fonksiyonu
-def find_roots(tokens):
-    roots = []
-    for token in tokens:
-        analysis = morphology.analyzeAndDisambiguate(JString(token)).bestAnalysis()
-        lemma = str(analysis[0].getLemmas()[0])
-        if lemma == "UNK":
-            lemma = token
-        roots.append(lemma)
-    return roots
-
-# POS etiketleme fonksiyonu
-def pos_tagging(tokens):
-    pos_tags = []
-    for token in tokens:
-        analysis = morphology.analyzeAndDisambiguate(JString(token)).bestAnalysis()
-        pos = str(analysis[0].getPos().getStringForm())
-        pos_tags.append(pos)
-    return pos_tags
     
 # Stop words çıkarma fonksiyonu
 def remove_stop_words(tokens, stop_words):
@@ -155,25 +126,17 @@ if removeRowMissingValue:
 if tokenization:
     tweets_data['Tokens'] = tweets_data['cleaned_text'].apply(tokenize_comment)
     
-# Kök bulma işlemini uygulama
-if lemmatization:
-    tweets_data['Roots'] = tweets_data['Tokens'].apply(find_roots)
-
 # Stop words çıkarma 
 if removeStopWords:
     # Stop words çıkarma işlemini uygulama
-    tweets_data['Filtered_Tokens'] = tweets_data['Roots'].apply(lambda roots: remove_stop_words(roots, stop_words))  
+    tweets_data['Filtered_Tokens'] = tweets_data['Tokens'].apply(lambda tokens: remove_stop_words(tokens, stop_words))  
      
-# POS etiketleme işlemini uygulama
-if pos_tagging_enabled:
-    tweets_data['POS_Tags'] = tweets_data['Filtered_Tokens'].apply(pos_tagging)
-
 # Temizlenmiş veriyi kaydetme
 tweets_data.to_csv(cleaned_csv_file_path)
 
-# `text` ve `Filtered_Tokens` (veya `clear_text`) sütunlarıyla yeni bir Excel dosyası oluşturma
+# text ve Filtered_Tokens (veya clear_text) sütunlarıyla yeni bir Excel dosyası oluşturma
 tweets_data_label = tweets_data[['text', 'cleaned_text', 'Filtered_Tokens']]
-tweets_data_label['clear_text_roots'] = tweets_data_label['Filtered_Tokens'].apply(lambda tokens: ' '.join(tokens))
+tweets_data_label['clear_text_without_stopwords'] = tweets_data_label['Filtered_Tokens'].apply(lambda tokens: ' '.join(tokens))
 tweets_data_label.drop(columns=['Filtered_Tokens'], inplace=True)
 tweets_data_label.to_csv(filtered_csv_path, index=False)
 
