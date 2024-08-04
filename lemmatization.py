@@ -31,10 +31,10 @@ back_vowels = 'aıou'
 front_vowels = 'eiöü'
 
 # Stop words dosyasının yolu
-stop_words_file =  r" " # stop words listesinin path'ini ekleyin. Bizim kullandığımıza stopWords.txt den ulaşabilirsiniz.
+stop_words_file =  r" " # stop words listesinin path'ini ekleyin. Bizim kullandığımıza stop_words.txt den ulaşabilirsiniz.
 stop_words = load_stop_words(stop_words_file)
 
-protected_words_file = r" " # proje için önemli olan ve değişmemesi gereken kelimelerin listesini hazırladık korunanKelimeler.txt dosyasından da ona ulaşabilirsiniz. Path'ini burada belirtin
+protected_words_file = r" " # proje için önemli olan ve değişmemesi gereken kelimelerin listesini hazırladık kelimeler.txt dosyasından da ona ulaşabilirsiniz. Path'ini burada belirtin
 protected_words = load_protected_words(protected_words_file)
 
 # zemberek kütüphanesinin spell checker'ının düzeltemediği bazı kelimeleri bu sözlükte topladık
