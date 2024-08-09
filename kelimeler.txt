@@ -68,7 +68,7 @@ pttcell
 türktelekom
 turktelekom
 twitchtv
-Twitch
+twitch
 twitch
 tikTok
 kickStreamer
@@ -76,7 +76,7 @@ kick_Turkey
 kickturkey
 kicklive
 kickcommunity
-Kick
+kick
 kick
 stream
 streamer
