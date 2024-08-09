@@ -33,8 +33,9 @@ Kodun sonunda işlenmiş veriler, belirtilen bir CSV dosyasına kaydedilir.
 
 ```python
 python lemmatization.py
+```
 
-**Açıklamalar** (* tek yıldız yerine ls olacak şekilde ayarla)
+**Açıklamalar**
 *Zemberek Kütüphanesi: Türkçe doğal dil işleme görevleri için kullanılan açık kaynak bir kütüphanedir. Bu projede Zemberek, kelime analizi ve yazım denetimi için kullanılmıştır.
 *Özel Düzeltmeler: Kod içerisinde tanımlanan `custom_corrections` sözlüğü, Zemberek kütüphanesinin düzeltmediği kelimeleri manuel olarak düzeltmek için kullanılır.
 *Stop Words ve Protected Words: Bu kodda kullanılan `stop_words.txt` ve `kelimeler.txt ` dosyaları, gereksiz kelimeleri çıkarmak ve korunması gereken özel kelimeleri belirlemek için kullanılır.
