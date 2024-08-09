@@ -19,7 +19,7 @@ driver = webdriver.Firefox()
 driver.get("https://twitter.com/login")
 
 # Arama parametreleri
-subject = '"Turkcell" OR "Vodafone" OR "Turknet" OR "TurkTelekom" OR "Türk Telekom" OR "Türksat" OR "SuperOnline" OR "Bimcell" OR "Pttcell" lang:tr'#subject = '"Turkcell" AND "Vodafone"' ikili de yazabiliriz
+subject = '"Turkcell" OR "Vodafone" OR "Turknet" OR "TurkTelekom" OR "Türk Telekom" OR "Türksat" OR "SuperOnline" OR "Bimcell" OR "Pttcell" OR "türk hava yolları" OR "pegasus hava yolları" OR "sunexpress" OR "anadolujet" OR "ajet" OR "thyao" OR "turkish airlines" OR "turkey airlines" OR "pegasus airlines" OR "pgs" OR "sun Express" OR "güneş Express" OR "Anadolu havayolları" OR "a-jet" OR "a jet" OR "thy" OR "kick-turkey" OR "twitch" OR "nimo tv" OR "youtube gaming" OR "facebook gaming" OR "kickturkey" OR "kick türkiye" OR "kick turkey" OR "twich" OR "twtch" OR "nimo-tv" OR "nimotv" OR "youtube-gaming" OR "youtubegaming" OR "yt gaming" OR "ytgaming" OR "facebookgaming" OR "facebook-gaming" OR "fb gaming" OR "fbgaming" OR "fbgaming" lang:tr'#subject = '"Turkcell" AND "Vodafone"' ikili de yazabiliriz
 start_date = datetime(2024, 3, 24)  # Başlangıç tarihi
 end_date = datetime(2024, 3, 25)     # Bitiş tarihi
 max_tweets = 10000  # Maksimum tweet sayısı
