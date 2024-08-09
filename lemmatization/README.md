@@ -19,7 +19,7 @@ pip install jpype1
 İndirdiğiniz `zemberek-full_old.jar` dosyasının path'ini unutmadan lemmatization.py kodu içindeki 
 `ZEMBEREK_PATH` değişkenine atamayı unutmayın. 
 
-**Kullanım**
+## Kullanım
 Bu kod parçası, Excel dosyalarındaki Türkçe metin verilerini işlemek için kullanılır. Metin verileri üzerinde aşağıdaki işlemler gerçekleştirilir:
 
 Tokenization: Metin cümlelerini kelimelere ayırır.
@@ -29,7 +29,7 @@ POS Tagging: Kelimelere part of speech (POS) etiketleri ekler.
 Negation Handling: Olumsuzluk içeren kelimeleri işaretler ve yeniden yapılandırır.
 Kodun sonunda işlenmiş veriler, belirtilen bir CSV dosyasına kaydedilir.
 
-**Kodun Çalıştırılması
+## Kodun Çalıştırılması
 
 ```python
 python lemmatization.py
