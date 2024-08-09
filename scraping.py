@@ -125,4 +125,3 @@ except Exception as e:
 
 # Tarayıcıyı kapatma
 driver.quit()
-
