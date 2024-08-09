@@ -99,9 +99,13 @@ def remove_stop_words(tokens, stop_words):
     
 # Entity listesi
 entities = [
-    "türk telekom", "turkcell", "vodafone", "türksat",
-    "ulak", "superonline", "turknet", "bimcell", "pttcell", "ptt cell", "türktelekom", "turk cell", "voda fone", 
-    "türk sat", "super online", "turk net"
+    "kick-turkey","twitch", "nimo tv", "youtube gaming", "facebook gaming", "kickturkey", "kick türkiye", 
+    "kick turkey", "twich",  "twtch", "nimo-tv", "nimotv", "youtube-gaming", "youtubegaming", "yt gaming", 
+    "ytgaming", "facebookgaming", "facebook-gaming", "fb gaming", "fbgaming", "türk telekom", "turkcell", 
+    "vodafone", "türksat", "superonline", "turknet", "bimcell", "pttcell", "ptt cell", "türktelekom", 
+    "turk cell", "voda fone", "türk sat", "super online", "turk net", "türk hava yolları", 
+    "pegasus hava yolları", "sunexpress", "anadolujet", "ajet", "thyao", "turkish airlines", "turkey airlines", 
+    "pegasus airlines", "pgs", "sun Express", "güneş Express", "anadolu havayolları", "a-jet", "a jet", "thy"
 ]
 
 # Entity'leri içermeyen yorumları kaldırma
