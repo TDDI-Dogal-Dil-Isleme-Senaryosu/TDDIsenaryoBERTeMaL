@@ -50,7 +50,8 @@ nltk.download('punkt')
 
 ***
 
-Kodumuzda lazım olan 'hepsi_birlestirilmis3.csv' dosyasına buradan erişebilirsiniz: etiketlenmis_dosya/hepsi_birlestirilmis3.csv
+Kodumuzda lazım olan 'hepsi_birlestirilmis3.csv' dosyasına buradan erişebilirsiniz: 
+[hepsi_birlestirilmis3.csv](etiketlenmis_dosya/hepsi_birlestirilmis3.csv)
 
 ***
 
