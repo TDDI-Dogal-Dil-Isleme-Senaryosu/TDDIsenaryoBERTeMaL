@@ -89,7 +89,7 @@ curl -X POST "http://localhost:7777/predict" -H "Content-Type: application/json"
 ***
 
 ## Proje Yapısı
-+ `main.py`: FastAPI uygulaması ve endpoint tanımları.
++ `api.py`: FastAPI uygulaması ve endpoint tanımları.
 + `ner_model/`: NER modelinin ve tokenizer'ının bulunduğu dizin.
 + `sentiment_model/`: Duygu analizi modelinin ve tokenizer'ının bulunduğu dizin.
 
