@@ -2,6 +2,8 @@
 
 Bu projede, Türkçe metinler üzerinde duygu analizi ve varlık tanıma (NER) işlemleri gerçekleştiren bir model geliştirilmiştir.
 
+***
+
 ## Gereksinimler
 
 Projenin çalıştırılması için aşağıdaki Python kütüphanelerine ihtiyaç vardır:
@@ -50,7 +52,7 @@ nltk.download('punkt')
 
 ***
 
-Kodumuzda lazım olan 'hepsi_birlestirilmis3.csv' dosyasına buradan erişebilirsiniz: 
+Kodumuzda lazım olan `hepsi_birlestirilmis3.csv` dosyasına buradan erişebilirsiniz: 
 [hepsi_birlestirilmis3.csv](etiketlenmis_dosya/hepsi_birlestirilmis3.csv)
 
 ***
@@ -63,41 +65,41 @@ df = pd.read_csv("hepsi_birlestirilmis3.csv", on_bad_lines='skip')
 
 ***
 
-Kodumuzun ikinci parçasında import ettiğimiz csv dosyasıyla 'output_son.json' oluşturuluyor. Bu json dosyası bir sonraki aşamada lazım. Yine yukardaki ile aynı kod parçasını kullanarak import ediyoruz csv dosyasını.
+Kodumuzun ikinci parçasında import ettiğimiz csv dosyasıyla `output_son.json` oluşturuluyor. Bu json dosyası bir sonraki aşamada lazım. Yine yukardaki ile aynı kod parçasını kullanarak import ediyoruz csv dosyasını.
 
 ***
 
-Kodumuzun üçüncü parçasında önceki kodumuzdan elde ettiğimiz 'output_son.json' dosyasını import ediyoruz:
+Kodumuzun üçüncü parçasında önceki kodumuzdan elde ettiğimiz `output_son.json` dosyasını import ediyoruz:
 
 ```bash
 file_path = r"output_son.json"
 ```
 
-Kodun sonucunda 'data.xlsx' dosyasını elde ediyoruz. Yine aynı şekilde bu dosyamızda bir sonraki kodumuzda lazım.
+Kodun sonucunda `data.xlsx` dosyasını elde ediyoruz. Yine aynı şekilde bu dosyamızda bir sonraki kodumuzda lazım.
 
 ***
 
-Kodumuzun dördüncü parçasında 'data.xlsx' dosyasını import ediyoruz:
+Kodumuzun dördüncü parçasında `data.xlsx` dosyasını import ediyoruz:
 
 ```bash
 df = pd.read_excel('data.xlsx')
 ```
 
-Bu kodun çıktısı olarak da NER model çıktı sonuçlarını elde ediyoruz ve 'outputs' adlı bir dosya elde ediyoruz.
+Bu kodun çıktısı olarak da NER model çıktı sonuçlarını elde ediyoruz ve `outputs` adlı bir dosya elde ediyoruz.
 
 ***
 
-Kodumuzun beşinci parçasında yine 'hepsi_birlestirilmis3.csv' dosyasını import ediyoruz:
+Kodumuzun beşinci parçasında yine `hepsi_birlestirilmis3.csv` dosyasını import ediyoruz:
 
 ```bash
 df = pd.read_csv("hepsi_birlestirilmis3.csv")
 ```
 
-Bu kodun çıktısı olarak da Sentiment modelin çıktı sonuçlarını elde ediyoruz ve 'sentiment_model_output' adlı dosyayı elde ediyoruz.
+Bu kodun çıktısı olarak da Sentiment modelin çıktı sonuçlarını elde ediyoruz ve `sentiment_model_output` adlı dosyayı elde ediyoruz.
 
 ***
 
-Kodumuzun altıncı parçasında önceki kodlardan elde ettiğimiz 'outputs' ve 'sentiment_model_output' dosyalarını import ediyoruz:
+Kodumuzun altıncı parçasında önceki kodlardan elde ettiğimiz `outputs` ve `sentiment_model_output` dosyalarını import ediyoruz:
 
 ```bash
 ner_model = NERModel("bert", "/content/outputs", use_cuda=True)
