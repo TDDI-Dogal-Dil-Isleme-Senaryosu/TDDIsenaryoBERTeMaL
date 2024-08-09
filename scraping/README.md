@@ -33,7 +33,7 @@ Bu modül, Twitter'dan belirli anahtar kelimelere göre tweet verilerini toplar 
 Kodun çalıştırılması:
 
 ```bash
-python twitter_scraper.py
+python scraping.py
 ```
 
 ## Parametreler
