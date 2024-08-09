@@ -57,7 +57,7 @@ Kodumuzda lazım olan `hepsi_birlestirilmis3.csv` dosyasına buradan erişebilir
 
 ***
 
-Kodumuzun ilk parçasında kaç tane pozitif, negatif ve nötr verimiz olduğu kontrol ediliyor. Bu aşama model eğitimi için gerekli değil. Kod şu şekilde:
+1. Kodumuzun ilk parçasında kaç tane pozitif, negatif ve nötr verimiz olduğu kontrol ediliyor. Bu aşama model eğitimi için gerekli değil. Kod şu şekilde:
 
 ```bash
 df = pd.read_csv("hepsi_birlestirilmis3.csv", on_bad_lines='skip')
@@ -65,11 +65,11 @@ df = pd.read_csv("hepsi_birlestirilmis3.csv", on_bad_lines='skip')
 
 ***
 
-Kodumuzun ikinci parçasında import ettiğimiz csv dosyasıyla `output_son.json` oluşturuluyor. Bu json dosyası bir sonraki aşamada lazım. Yine yukardaki ile aynı kod parçasını kullanarak import ediyoruz csv dosyasını.
+2. Kodumuzun ikinci parçasında import ettiğimiz csv dosyasıyla `output_son.json` oluşturuluyor. Bu json dosyası bir sonraki aşamada lazım. Yine yukardaki ile aynı kod parçasını kullanarak import ediyoruz csv dosyasını.
 
 ***
 
-Kodumuzun üçüncü parçasında önceki kodumuzdan elde ettiğimiz `output_son.json` dosyasını import ediyoruz:
+3. Kodumuzun üçüncü parçasında önceki kodumuzdan elde ettiğimiz `output_son.json` dosyasını import ediyoruz:
 
 ```bash
 file_path = r"output_son.json"
@@ -79,7 +79,7 @@ Kodun sonucunda `data.xlsx` dosyasını elde ediyoruz. Yine aynı şekilde bu do
 
 ***
 
-Kodumuzun dördüncü parçasında `data.xlsx` dosyasını import ediyoruz:
+4. Kodumuzun dördüncü parçasında `data.xlsx` dosyasını import ediyoruz:
 
 ```bash
 df = pd.read_excel('data.xlsx')
@@ -89,7 +89,7 @@ Bu kodun çıktısı olarak da NER model çıktı sonuçlarını elde ediyoruz v
 
 ***
 
-Kodumuzun beşinci parçasında yine `hepsi_birlestirilmis3.csv` dosyasını import ediyoruz:
+5. Kodumuzun beşinci parçasında yine `hepsi_birlestirilmis3.csv` dosyasını import ediyoruz:
 
 ```bash
 df = pd.read_csv("hepsi_birlestirilmis3.csv")
@@ -99,7 +99,7 @@ Bu kodun çıktısı olarak da Sentiment modelin çıktı sonuçlarını elde ed
 
 ***
 
-Kodumuzun altıncı parçasında önceki kodlardan elde ettiğimiz `outputs` ve `sentiment_model_output` dosyalarını import ediyoruz:
+6. Kodumuzun altıncı parçasında önceki kodlardan elde ettiğimiz `outputs` ve `sentiment_model_output` dosyalarını import ediyoruz:
 
 ```bash
 ner_model = NERModel("bert", "/content/outputs", use_cuda=True)
