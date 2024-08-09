@@ -1,4 +1,4 @@
-#Label Studio'da Etiketleme
+# Label Studio'da Etiketleme
 
 **1.** Label Studio'ya terminalden giriş yaptıktan sonra `CREATE` tuşuna tıklıyoruz.
 
